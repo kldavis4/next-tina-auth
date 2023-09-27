@@ -3,20 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "dev:prod": "tinacms dev -c \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@kldavis4/mongodb-level": "^0.0.4",
+    "@tinacms/cli": "^0.0.0-20230927175532",
+    "@tinacms/datalayer": "^0.0.0-20230927175532",
+    "next": "latest",
+    "next-auth": "^4.22.1",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "tinacms": "^0.0.0-20230927175532",
+    "tinacms-authjs": "^0.0.0-20230927175532",
+    "tinacms-gitprovider-github": "^0.0.0-20230927175532",
+    "upstash-redis-level": "1.0.0"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
-    "@types/react-dom": "latest"
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
   }
 }
