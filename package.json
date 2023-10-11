@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
     "dev:prod": "tinacms dev -c \"next dev\"",
-    "build": "next build",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "next lint"
   },
