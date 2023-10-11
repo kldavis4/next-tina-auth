@@ -16,11 +16,11 @@ const handler = TinaNodeBackend({
         databaseClient: databaseClient,
         debug: false,
         uidProp: 'email',
-        secret: process.env.NEXTAUTH_SECRET,
+        secret: process.env.NEXTAUTH_SECRET as string,
         providers: [
           DiscordProvider({
-            clientId: process.env.DISCORD_CLIENT_ID,
-            clientSecret: process.env.DISCORD_CLIENT_SECRET,
+            clientId: process.env.DISCORD_CLIENT_ID as string,
+            clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
           })
         ]
       }),
@@ -28,7 +28,7 @@ const handler = TinaNodeBackend({
   databaseClient,
 })
 
-export default (req, res) => {
+export default (req: any, res: any) => {
   // Modify the request here if you need to
   return handler(req, res)
 }

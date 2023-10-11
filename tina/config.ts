@@ -4,6 +4,7 @@ import {
   TinaUserCollection,
   DefaultAuthJSProvider,
 } from 'tinacms-authjs/dist/tinacms'
+import {AuthProvider} from '@tinacms/schema-tools'
 
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
@@ -11,13 +12,13 @@ const discordTinaUserCollection = {
     ...TinaUserCollection,
     fields: [
       {
-          ...TinaUserCollection.fields[0],
+          ...TinaUserCollection.fields![0],
           ui: {
               defaultItem: {
                   name: 'New User',
                   email: ''
               },
-              itemProps: (item) => ({ label: `${item?.name} - ${item?.email}` })
+              itemProps: (item: any) => ({ label: `${item?.name} - ${item?.email}` })
           },
           fields: [
             {
@@ -40,6 +41,7 @@ const discordTinaUserCollection = {
 
 const config = defineStaticConfig({
     contentApiUrlOverride: '/api/tina/gql',
+    // @ts-ignore
     authProvider: isLocal ? new LocalAuthProvider() : new DefaultAuthJSProvider(),
     branch: 
         process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
@@ -49,6 +51,7 @@ const config = defineStaticConfig({
         publicFolder: 'public',
         outputFolder: 'admin',
     },
+    // @ts-ignore
     schema: { collections: [ discordTinaUserCollection ] }
 })
 
