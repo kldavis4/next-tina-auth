@@ -36,11 +36,10 @@ const discordTinaUserCollection = {
       }
     ]
 
-
 }
 
 const config = defineStaticConfig({
-    contentApiUrlOverride: '/api/gql',
+    contentApiUrlOverride: '/api/tina/gql',
     authProvider: isLocal ? new LocalAuthProvider() : new DefaultAuthJSProvider(),
     branch: 
         process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
