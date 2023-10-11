@@ -3,6 +3,7 @@ import { defineStaticConfig, LocalAuthProvider } from 'tinacms'
 import {
   TinaUserCollection,
   DefaultAuthJSProvider,
+  UsernamePasswordAuthJSProvider,
 } from 'tinacms-authjs/dist/tinacms'
 
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
@@ -41,7 +42,7 @@ const discordTinaUserCollection = {
 const config = defineStaticConfig({
     contentApiUrlOverride: '/api/tina/gql',
     // @ts-ignore
-    authProvider: isLocal ? new LocalAuthProvider() : new DefaultAuthJSProvider(),
+    authProvider: isLocal ? new LocalAuthProvider() : new UsernamePasswordAuthJSProvider(),
     branch: 
         process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
         process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
@@ -51,7 +52,7 @@ const config = defineStaticConfig({
         outputFolder: 'admin',
     },
     // @ts-ignore
-    schema: { collections: [ discordTinaUserCollection ] }
+    schema: { collections: [ TinaUserCollection ] }
 })
 
 export default config

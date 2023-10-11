@@ -14,15 +14,15 @@ const handler = TinaNodeBackend({
     : AuthJsBackendAuthentication({
         authOptions: TinaAuthJSOptions({
         databaseClient: databaseClient,
-        debug: false,
-        uidProp: 'email',
+        // debug: false,
+        // uidProp: 'email',
         secret: process.env.NEXTAUTH_SECRET as string,
-        providers: [
-          DiscordProvider({
-            clientId: process.env.DISCORD_CLIENT_ID as string,
-            clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
-          })
-        ]
+        // providers: [
+        //   DiscordProvider({
+        //     clientId: process.env.DISCORD_CLIENT_ID as string,
+        //     clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
+        //   })
+        // ]
       }),
       }),
   databaseClient,
