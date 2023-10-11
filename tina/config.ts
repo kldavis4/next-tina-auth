@@ -4,7 +4,6 @@ import {
   TinaUserCollection,
   DefaultAuthJSProvider,
 } from 'tinacms-authjs/dist/tinacms'
-import {AuthProvider} from '@tinacms/schema-tools'
 
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 
