@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@kldavis4/mongodb-level": "^0.0.4",
-    "@tinacms/cli": "^0.0.0-20231011133112",
-    "@tinacms/datalayer": "^0.0.0-20231011133112",
+    "@tinacms/cli": "^0.0.0-20231011163721",
+    "@tinacms/datalayer": "^0.0.0-20231011163721",
     "next": "latest",
     "next-auth": "^4.23.2",
     "react": "latest",
     "react-dom": "latest",
-    "tinacms": "^0.0.0-20231011133112",
-    "tinacms-authjs": "^0.0.0-20231011133112",
-    "tinacms-gitprovider-github": "^0.0.0-20231011133112",
+    "tinacms": "^0.0.0-20231011163721",
+    "tinacms-authjs": "^0.0.0-20231011163721",
+    "tinacms-gitprovider-github": "^0.0.0-20231011163721",
     "upstash-redis-level": "1.0.0"
   },
   "devDependencies": {
